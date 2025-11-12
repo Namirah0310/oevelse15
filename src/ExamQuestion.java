@@ -4,12 +4,15 @@ public class ExamQuestion {
     private int number;
     private char grade;
 
-    public ExamQuestion(int number, char grade){
-
+    public ExamQuestion(int number){
         this.number = number;
-        this.grade = grade;
+        Random random = new Random();
+        char ran = (char) ('A' + random.nextInt(6));
+        this.grade = ran;
     }
 
+
+    //getters
     public int getNumber(){
         return number;
     }
@@ -17,13 +20,8 @@ public class ExamQuestion {
         return grade;
     }
 
-    // setter
-    public void setGrade(char grade){
-        this.grade = grade;
-    }
-
     @Override
     public String toString(){
-        return "";
+        return "Exam question : " + number + " - Grade: " + grade;
     }
 }
